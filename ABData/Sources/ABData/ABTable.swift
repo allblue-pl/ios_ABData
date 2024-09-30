@@ -67,5 +67,5 @@ open class ABTableRow {
 }
 
 public protocol ABTableRowProtocol {
-    func getRowAsJSONObject() -> [String: AnyObject]
+    func getRowAsJSONObject(prefix: String = "") -> [String: AnyObject]
 }
