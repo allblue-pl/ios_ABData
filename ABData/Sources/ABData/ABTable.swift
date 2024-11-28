@@ -55,7 +55,7 @@ open class ABTableRow {
     
     private let _columnsCount: Int
     
-    public let json: [AnyObject]
+    public var jRow: [AnyObject]
     public let offset: Int
     
     
@@ -65,7 +65,7 @@ open class ABTableRow {
     
     
     public init(_ json: [AnyObject], _ columnsCount: Int, offset: Int = 0) {
-        self.json = json
+        self.jRow = json
         self._columnsCount = columnsCount
         self.offset = offset
     }
@@ -74,4 +74,5 @@ open class ABTableRow {
 
 public protocol ABTableRowProtocol {
     func getRowAsJSONObject(prefix: String) -> [String: AnyObject]
+    func setRowAsJSONObject(prefix: String, offset: Int) -> [String: AnyObject]
 }
