@@ -73,6 +73,6 @@ open class ABTableRow {
 }
 
 public protocol ABTableRowProtocol {
-    func getRowAsJSONObject(prefix: String) -> [String: AnyObject]
-    func setRowAsJSONObject(prefix: String, offset: Int) -> [String: AnyObject]
+    func getAsJSONObject(prefix: String) -> [String: AnyObject]
+    func setFromJSONObject(_ rowJSON: [String: AnyObject], prefix: String, offset: Int)
 }
