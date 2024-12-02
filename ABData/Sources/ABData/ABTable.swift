@@ -1,5 +1,6 @@
 
 import ABDatabase
+import ABLibs
 import Foundation
 
 open class ABTable {
@@ -55,7 +56,7 @@ open class ABTableRow {
     
     private let _columnsCount: Int
     
-    public var jRow: [AnyObject]
+    public var jRow: JSONArray
     public let offset: Int
     
     
@@ -64,10 +65,11 @@ open class ABTableRow {
     }
     
     
-    public init(_ json: [AnyObject], _ columnsCount: Int, offset: Int = 0) {
-        self.jRow = json
-        self._columnsCount = columnsCount
+    public init(_ jRow: JSONArray, _ columnsCount: Int, offset: Int = 0) {
+        self.jRow = jRow
         self.offset = offset
+        
+        self._columnsCount = columnsCount
     }
     
 }
