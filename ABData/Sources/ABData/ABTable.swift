@@ -4,7 +4,6 @@ import ABLibs
 import Foundation
 
 open class ABTable {
-    
     private var columns: [ABTableColumn]
     
     
@@ -48,12 +47,9 @@ open class ABTable {
         
         return columnTypes
     }
-    
 }
 
-
 open class ABTableRow {
-    
     private let _columnsCount: Int
     
     public var jRow: JSONArray
@@ -71,10 +67,9 @@ open class ABTableRow {
         
         self._columnsCount = columnsCount
     }
-    
 }
 
 public protocol ABTableRowProtocol {
-    func getAsJSONObject(prefix: String) -> [String: AnyObject]
-    func setFromJSONObject(_ rowJSON: [String: AnyObject], prefix: String, offset: Int)
+    func getAsJSONObject(prefix: String) -> JSONObject
+    func setFromJSONObject(_ rowJSON: JSONObject, prefix: String, offset: Int)
 }
