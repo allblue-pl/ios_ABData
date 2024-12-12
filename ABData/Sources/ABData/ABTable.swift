@@ -50,26 +50,18 @@ open class ABTable {
 }
 
 open class ABTableRow {
-    private let _columnsCount: Int
-    
     public var jRow: JSONArray
     public let offset: Int
     
     
-    public var columnsCount: Int {
-        get { _columnsCount }
-    }
-    
-    
-    public init(_ jRow: JSONArray, _ columnsCount: Int, offset: Int = 0) {
+    public init(_ jRow: JSONArray, offset: Int = 0) {
         self.jRow = jRow
         self.offset = offset
-        
-        self._columnsCount = columnsCount
     }
 }
 
 public protocol ABTableRowProtocol {
+    static var columnsCount: Int { get }
     func getAsJSONObject(prefix: String) -> JSONObject
     func setFromJSONObject(_ rowJSON: JSONObject, prefix: String)
 }
