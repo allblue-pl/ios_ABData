@@ -22,7 +22,7 @@ public class ABDataStore {
             }
             
             callback(dbSchemeVersion)
-        } execute: { error in
+        } onError: { error in
             print("ABDataStore Error -> \(error)")
             callback(-1)
         }
