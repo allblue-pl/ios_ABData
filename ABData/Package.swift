@@ -18,7 +18,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(path: "../../ABDatabase/ABDatabase"),
-        .package(path: "../../ABDatabase/ABLibs"),
+        .package(path: "../../ABLibs/ABLibs"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
